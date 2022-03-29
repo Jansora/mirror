@@ -12,5 +12,9 @@ COPY ./dependencies/sources.list /etc/apt
 
 RUN apt update
 
+RUN apt install vim net-tools lrzsz curl wget -y
+
+
+
 
 WORKDIR /root
