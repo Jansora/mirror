@@ -6,5 +6,6 @@ RUN apt update
 
 RUN apt install apt-transport-https ca-certificates -y
 
+RUN apt install subversion
 
-apt install subversion
+
