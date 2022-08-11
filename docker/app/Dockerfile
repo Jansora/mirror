@@ -6,8 +6,9 @@ ENV LC_CTYPE=C.UTF-8
 
 RUN apt update
 
+RUN apt install zip openjdk-17-jdk -y
 
-RUN apt install zip openjdk17 -y
+
 
 
 WORKDIR /root
