@@ -10,6 +10,4 @@ RUN apt update
 RUN apt install zip openjdk17 -y
 
 
-
-
 WORKDIR /root
