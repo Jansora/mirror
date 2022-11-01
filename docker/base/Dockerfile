@@ -12,7 +12,7 @@ COPY ./dependencies/sources.list /etc/apt
 
 RUN apt update
 
-RUN apt install vim net-tools lrzsz curl wget tzdata telnet netbase iputils-ping -y
+RUN apt install vim net-tools lrzsz curl wget tzdata telnet netbase iputils-ping traceroute -y
 
 # 添加时区环境变量，亚洲，上海
 ENV TimeZone=Asia/Shanghai
