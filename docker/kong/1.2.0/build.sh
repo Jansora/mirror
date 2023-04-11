@@ -1,0 +1,1 @@
+docker build -t ccr.ccs.tencentyun.com/jansora/kong:1.2.0 .
