@@ -1,7 +1,4 @@
-FROM ccr.ccs.tencentyun.com/jansora/base:v6
-
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-RUN sudo apt-get install nodejs -y
+FROM node:18-alpine
 
 WORKDIR /app
 

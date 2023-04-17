@@ -1,0 +1,15 @@
+{
+  "index": {
+    "type": "page",
+    "title": "Jansora's Document",
+    "display": "hidden",
+    "theme": {
+    }
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com/shuding_",
+    "newWindow": true
+  }
+}
