@@ -43,7 +43,7 @@ function removeMatchedRoutePath()
       end
     end
   end
-  
+
   return request_uri:gsub("^"..matched_path, "")
 
 end
@@ -73,10 +73,15 @@ function URLRewriter:access(config)
   local url = resolveUrlParams(requestParams, merged_uri)
 
 
-  local service_path = ngx.ctx.service.path or ""
-  if service_path ~= "" then
-    url = service_path..url
-  end
+  --local service_path = ngx.ctx.service.path or ""
+  --if service_path ~= "" then
+  --  url = service_path..url
+  --end
+
+
+  ngx.log(ngx.ERR, "rewrite url: ", url)
+
+
 
   ngx.var.upstream_uri = url
 end
