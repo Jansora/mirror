@@ -25,17 +25,11 @@ end
 
 function removeMatchedRoutePath()
 
-
-  -- 以下为添加部分
-
   -- 获取与当前请求匹配的路由对象
   local matched_route = kong.router.get_route()
 
   -- 获取当前请求的 URI
   local request_uri = ngx.var.uri
-
-  ngx.log(ngx.ERR, "uri: ", matched_route.uri, "strip_path: ", matched_route.strip_path)
-
 
   -- 检查匹配的路径
   local matched_path
@@ -49,15 +43,7 @@ function removeMatchedRoutePath()
       end
     end
   end
-
-  if matched_path then
-    ngx.log(ngx.ERR, "Matched path: ", matched_path)
-  else
-    ngx.log(ngx.ERR, "No matched path found.")
-  end
-
-  ngx.log(ngx.ERR, "request_uri:gsub(\"^\"..matched_path, \"\"): ", request_uri:gsub("^"..matched_path, ""))
-
+  
   return request_uri:gsub("^"..matched_path, "")
 
 end
@@ -86,8 +72,6 @@ function URLRewriter:access(config)
   local merged_uri = config.url..uri_suffix
   local url = resolveUrlParams(requestParams, merged_uri)
 
-
-  ngx.log(ngx.ERR, "url: ", url)
 
   local service_path = ngx.ctx.service.path or ""
   if service_path ~= "" then
