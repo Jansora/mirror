@@ -79,7 +79,7 @@ function URLRewriter:access(config)
   --end
 
 
-  ngx.log(ngx.ERR, "rewrite url: ", url)
+  ngx.log(ngx.INFO, "kong-rewrite-url-plugin working. source: [", ngx.var.uri, "].  target: [", url )
 
 
 
