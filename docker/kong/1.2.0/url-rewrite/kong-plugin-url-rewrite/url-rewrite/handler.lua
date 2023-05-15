@@ -54,6 +54,7 @@ end
 
 function URLRewriter:access(config)
   if config.query_string ~= nil then
+
     local args = ngx.req.get_uri_args()
     for k, queryString in ipairs(config.query_string) do
       local splitted = split(queryString, '=')
