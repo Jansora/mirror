@@ -8,6 +8,8 @@ RUN apt update
 
 RUN apt install zip openjdk-17-jdk -y
 
+COPY opentelemetry-javaagent.jar /root/opentelemetry-javaagent.jar
+
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
 
 RUN echo "alias as.sh='java -jar /opt/arthas/arthas-boot.jar'" >> ~/.bashrc
