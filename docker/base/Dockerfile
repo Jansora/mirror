@@ -20,5 +20,10 @@ ENV TimeZone=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TimeZone /etc/localtime
 RUN echo $TimeZone > /etc/timezone
 
+# Update the sysctl configuration
+RUN echo 'net.ipv4.tcp_keepalive_time = 300\n net.ipv4.tcp_keepalive_intvl = 75\n net.ipv4.tcp_keepalive_probes = 9' >> /etc/sysctl.conf
+
+# Apply the sysctl changes
+RUN sysctl -p
 
 WORKDIR /root
