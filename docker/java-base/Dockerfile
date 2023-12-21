@@ -26,4 +26,8 @@ RUN echo 'net.ipv4.tcp_keepalive_time = 300\n net.ipv4.tcp_keepalive_intvl = 75\
 # Apply the sysctl changes
 RUN sysctl -p
 
+# add arthas
+COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
+
+
 WORKDIR /root
