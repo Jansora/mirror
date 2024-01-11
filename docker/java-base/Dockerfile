@@ -8,11 +8,10 @@ RUN apt update
 
 RUN apt install apt-transport-https ca-certificates -y
 
-# COPY ./dependencies/sources.list /etc/apt
 
 RUN apt update
 
-RUN apt install vim net-tools lrzsz curl wget tzdata telnet netbase iputils-ping traceroute -y
+RUN apt install vim net-tools lrzsz curl wget tzdata telnet netbase iputils-ping traceroute zip -y
 
 # 添加时区环境变量，亚洲，上海
 ENV TimeZone=Asia/Shanghai
@@ -29,5 +28,7 @@ RUN sysctl -p
 # add arthas
 COPY --from=hengyunabc/arthas:latest /opt/arthas /opt/arthas
 
+# add jdk
+RUN apt install openjdk-17-jdk -y
 
 WORKDIR /root
