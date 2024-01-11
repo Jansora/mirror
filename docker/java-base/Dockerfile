@@ -6,12 +6,10 @@ ENV LC_CTYPE=C.UTF-8
 
 RUN apt update
 
-RUN apt install apt-transport-https ca-certificates -y
-
-
-RUN apt update
-
-RUN apt install vim net-tools lrzsz curl wget tzdata telnet netbase iputils-ping traceroute zip -y
+RUN apt install apt-transport-https ca-certificates \
+    vim net-tools lrzsz curl wget tzdata telnet netbase iputils-ping traceroute \
+    zip \
+     -y
 
 # 添加时区环境变量，亚洲，上海
 ENV TimeZone=Asia/Shanghai
