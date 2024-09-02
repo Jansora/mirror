@@ -1,1 +1,1 @@
-docker build -t ccr.ccs.tencentyun.com/jansora/kong:1.2.0 .
+docker build -t registry.cn-hongkong.aliyuncs.com/jansora/kong:1.2.0 .
