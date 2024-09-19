@@ -1,1 +1,0 @@
-docker build -t registry.cn-hongkong.aliyuncs.com/jansora/kong:3.6.1.2_with_rewrite .
