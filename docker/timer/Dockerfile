@@ -27,7 +27,7 @@ RUN apt update && apt install -y postgresql-client-17
 
 # 安装 Python 库（使用清华源）
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple --break-system-packages \
-    psycopg2-binary pymysql oss2 requests beautifulsoup4 lxml bs4
+    psycopg2-binary pymysql oss2 requests beautifulsoup4 lxml bs4 redis
 
 # 验证安装
 RUN psql --version && mysqldump --version && pip3 list
