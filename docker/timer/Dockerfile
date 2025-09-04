@@ -3,7 +3,7 @@ FROM ubuntu:24.04
 ENV LANG C.UTF-8
 ENV LC_CTYPE C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
-
+ENV TZ=Asia/Shanghai
 RUN #sed -i.bak "s|http://.*.ubuntu.com|https://mirrors.tuna.tsinghua.edu.cn|g" /etc/apt/sources.list.d/ubuntu.sources
 
 RUN apt update && apt install sshpass curl rsync wget net-tools gnupg -y
