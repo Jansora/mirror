@@ -22,8 +22,8 @@ RUN mkdir -p /etc/apt/keyrings && \
     echo "deb [signed-by=/etc/apt/keyrings/postgresql.gpg] http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" \
     > /etc/apt/sources.list.d/pgdg.list
 
-# 安装 psql 17
-RUN apt update && apt install -y postgresql-client-17
+# 安装 psql 18
+RUN apt update && apt install -y postgresql-client-18
 
 # 安装 Python 库（使用清华源）
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple --break-system-packages \
