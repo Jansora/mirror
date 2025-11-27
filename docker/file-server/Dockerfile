@@ -1,4 +1,4 @@
-FROM docker.1ms.run/library/openresty/openresty:alpine
+FROM docker.1ms.run/openresty/openresty:alpine
 
 # 创建 auth 文件夹
 RUN mkdir -p /etc/nginx/conf.d /usr/local/openresty/nginx/html/scripts
